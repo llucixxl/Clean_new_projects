@@ -1,5 +1,7 @@
 // JS initial commit
 
+// Computer choice function
+
 function getComputerChoice() {
   const calcFormula = Math.floor(Math.random() * 3);
 
@@ -11,6 +13,10 @@ function getComputerChoice() {
     return "scissors";
   }
 }
+
+// End of computer choice function
+
+// Human choice function
 
 function getHumanChoice() {
   let humanAnswer = prompt("Please insert your choice!");
@@ -28,8 +34,16 @@ function getHumanChoice() {
   }
 }
 
+// End of human choice function
+
+// Score storing variables
+
 let computerScore = 0;
 let humanScore = 0;
+
+// End of score storing variables
+
+// playRound function code
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === "rock" && computerChoice === "rock") {
@@ -110,10 +124,17 @@ Human win! Scissors beat paper!`
   }
 }
 
+// End of playRound function code
+
+// scoreBoard function to make score increment
+
 function scoreBoard() {
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
 
   playRound(humanSelection, computerSelection);
 }
+
+// End of scoreBoard function
+
 scoreBoard();
