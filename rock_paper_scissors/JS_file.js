@@ -13,7 +13,8 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  const humanAnswer = prompt("Please insert your choice!");
+  let humanAnswer = prompt("Please insert your choice!");
+  humanAnswer = humanAnswer.toLowerCase();
 
   if (humanAnswer === "rock") {
     return "rock";
