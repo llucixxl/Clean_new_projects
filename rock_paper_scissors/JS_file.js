@@ -32,76 +32,88 @@ let computerScore = 0;
 let humanScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-  if (humanSelection === "rock" && computerSelection === "rock") {
+  if (humanChoice === "rock" && computerChoice === "rock") {
     console.log(
       `User choice: "rock" 
 Computer choice: "rock"
 
 Draw! You both selected rock!`
     );
-  } else if (humanSelection === "paper" && computerSelection === "rock") {
+  } else if (humanChoice === "paper" && computerChoice === "rock") {
     console.log(
       `User choice: "paper"
 Computer choice: "rock"
 
-User wins! Paper beats rock!`
+Human wins! Paper beats rock!`
     );
-  } else if (humanSelection === "scissors" && computerSelection === "rock") {
+    humanScore++;
+    console.log(`Human: ` + humanScore);
+  } else if (humanChoice === "scissors" && computerChoice === "rock") {
     console.log(
       `User choice: "scissors"
 Computer choice: "rock"
 
 Computer wins! Rock beat scissors!`
     );
-  } else if (humanSelection === "paper" && computerSelection === "paper") {
+    computerScore++;
+    console.log(`Computer: ` + computerScore);
+  } else if (humanChoice === "paper" && computerChoice === "paper") {
     console.log(
       `User choice: "paper"
 Computer choice: "paper"
 
 Draw! You both selected paper!`
     );
-  } else if (
-    humanSelection === "scissors" &&
-    computerSelection === "scissors"
-  ) {
+  } else if (humanChoice === "scissors" && computerChoice === "scissors") {
     console.log(
       `User choice: "scissors"
 Computer choice: "scissors"
 
 Draw! You both selected scissors!`
     );
-  } else if (humanSelection === "rock" && computerSelection === "paper") {
+  } else if (humanChoice === "rock" && computerChoice === "paper") {
     console.log(
       `User choice: "rock"
 Computer choice: "paper"
 
 Computer wins! Paper beats rock!`
     );
-  } else if (humanSelection === "rock" && computerSelection === "scissors") {
+    computerScore++;
+    console.log(`Computer: ` + computerScore);
+  } else if (humanChoice === "rock" && computerChoice === "scissors") {
     console.log(
       `User choice: "rock"
 Computer choice: "scissors"
 
-You win! Rock beats scissors!`
+Human win! Rock beats scissors!`
     );
-  } else if (humanSelection === "paper" && computerSelection === "scissors") {
+    humanScore++;
+    console.log(`Human: ` + humanScore);
+  } else if (humanChoice === "paper" && computerChoice === "scissors") {
     console.log(
       `User choice: "paper"
 Computer choice: "scissors"
 
 Computer wins! Scissors beat paper!`
     );
-  } else if (humanSelection === "scissors" && computerSelection === "paper") {
+    computerScore++;
+    console.log(`Computer: ` + computerScore);
+  } else if (humanChoice === "scissors" && computerChoice === "paper") {
     console.log(
       `User choice: "scissors"
 Computer choice: "paper"
 
-You win! Scissors beat paper!`
+Human win! Scissors beat paper!`
     );
+    humanScore++;
+    console.log(`Human: ` + humanScore);
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function scoreBoard() {
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+  playRound(humanSelection, computerSelection);
+}
+scoreBoard();
