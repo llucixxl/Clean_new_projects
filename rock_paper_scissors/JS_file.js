@@ -159,6 +159,6 @@ Human win! Scissors beat paper!`
   }
 }
 
-// End of winner announce in the console
+// End of winner announce in the browser's console
 
 playGame();
