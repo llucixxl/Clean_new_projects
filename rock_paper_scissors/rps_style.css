@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.menu-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  gap: 50px;
+}
+.buttons {
+  font-size: 40px;
+  width: 200px;
+  height: 60px;
+  font-family: sans-serif;
+}
+.button-1 {
+  color: blue;
+}
+.button-2 {
+  color: rgb(1, 99, 1);
+}
+.button-3 {
+  color: red;
+}
