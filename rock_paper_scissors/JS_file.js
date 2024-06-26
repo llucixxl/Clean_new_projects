@@ -46,7 +46,7 @@ function playGame() {
 
   // playRound function code
 
-  function playRound(humanChoice, computerChoice) {
+  function scoreBoard(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "rock") {
       console.log(
         `User choice: "rock" 
@@ -129,22 +129,22 @@ Human win! Scissors beat paper!`
 
   // scoreBoard function to make score increment
 
-  function scoreBoard() {
+  function playRound() {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
-    playRound(humanSelection, computerSelection);
+    scoreBoard(humanSelection, computerSelection);
   }
 
   // End of scoreBoard function
 
   // Call playRound 5 times in a round
 
-  scoreBoard();
-  scoreBoard();
-  scoreBoard();
-  scoreBoard();
-  scoreBoard();
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+  playRound();
 
   // End of the playRound call
 
@@ -158,6 +158,17 @@ Human win! Scissors beat paper!`
     console.log(`The round is a DRAW!`);
   }
 }
+
+const menuButtons = document.querySelector("#menu-container");
+menuButtons.addEventListener("click", (event) => {
+  let target = event.target;
+
+  switch (target.id) {
+    case "rock":
+      scoreBoard();
+      console.log("");
+  }
+});
 
 // End of winner announce in the browser's console // test commit for rps-ui branch
 
