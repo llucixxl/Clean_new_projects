@@ -1,6 +1,6 @@
-// // JS initial commit
+// JS initial commit
 
-// // Computer choice function
+// Computer choice function
 
 function getComputerChoice() {
   const calcFormula = Math.floor(Math.random() * 3);
@@ -14,9 +14,9 @@ function getComputerChoice() {
   }
 }
 
-// // End of computer choice function
+// End of computer choice function
 
-// // Human choice function
+// Human choice function
 
 function getHumanChoice() {
   let humanAnswer = prompt("Please insert your choice!");
@@ -34,7 +34,7 @@ function getHumanChoice() {
   }
 }
 
-// // End of human choice function
+// End of human choice function
 
 function playGame() {
   // Score storing variables
@@ -42,9 +42,9 @@ function playGame() {
   let computerScore = 0;
   let humanScore = 0;
 
-  //   // End of score storing variables
+  // End of score storing variables
 
-  //   // playRound function code
+  // Start of scoreBoard function code
 
   function scoreBoard(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "rock") {
@@ -125,9 +125,9 @@ Human win! Scissors beat paper!`
     }
   }
 
-  //   // End of playRound function code
+  // End of scoreBoard function code
 
-  //   // scoreBoard function to make score increment
+  // playRound function to make score increment
 
   function playRound() {
     const humanSelection = getHumanChoice();
@@ -136,9 +136,9 @@ Human win! Scissors beat paper!`
     scoreBoard(humanSelection, computerSelection);
   }
 
-  //   // End of scoreBoard function
+  // End of playRound function
 
-  //   // Call playRound 5 times in a round
+  // Call playRound 5 times in a round
 
   // playRound();
   // playRound();
@@ -146,6 +146,9 @@ Human win! Scissors beat paper!`
   // playRound();
   // playRound();
 
+  // End of the playRound call
+
+  // Menu buttons listener for click
   let menuButtons = document.querySelector("#menu-container");
   menuButtons.addEventListener("click", (event) => {
     let target = event.target.closest("button");
@@ -168,9 +171,9 @@ Human win! Scissors beat paper!`
     }
   });
 
-  //   // End of the playRound call
+  // End of Menu buttons listener for click
 
-  //   // Winner announce in the console
+  // Winner announce in the console
 
   if (humanScore > computerScore) {
     console.log(`The human is the winner of the round!`);
