@@ -1,6 +1,6 @@
-// JS initial commit
+// // JS initial commit
 
-// Computer choice function
+// // Computer choice function
 
 function getComputerChoice() {
   const calcFormula = Math.floor(Math.random() * 3);
@@ -14,9 +14,9 @@ function getComputerChoice() {
   }
 }
 
-// End of computer choice function
+// // End of computer choice function
 
-// Human choice function
+// // Human choice function
 
 function getHumanChoice() {
   let humanAnswer = prompt("Please insert your choice!");
@@ -34,7 +34,7 @@ function getHumanChoice() {
   }
 }
 
-// End of human choice function
+// // End of human choice function
 
 function playGame() {
   // Score storing variables
@@ -42,14 +42,14 @@ function playGame() {
   let computerScore = 0;
   let humanScore = 0;
 
-  // End of score storing variables
+  //   // End of score storing variables
 
-  // playRound function code
+  //   // playRound function code
 
   function scoreBoard(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "rock") {
       console.log(
-        `User choice: "rock" 
+        `User choice: "rock"
 Computer choice: "rock"
 
 Draw! You both selected rock!`
@@ -125,9 +125,9 @@ Human win! Scissors beat paper!`
     }
   }
 
-  // End of playRound function code
+  //   // End of playRound function code
 
-  // scoreBoard function to make score increment
+  //   // scoreBoard function to make score increment
 
   function playRound() {
     const humanSelection = getHumanChoice();
@@ -136,19 +136,41 @@ Human win! Scissors beat paper!`
     scoreBoard(humanSelection, computerSelection);
   }
 
-  // End of scoreBoard function
+  //   // End of scoreBoard function
 
-  // Call playRound 5 times in a round
+  //   // Call playRound 5 times in a round
 
-  playRound();
-  playRound();
-  playRound();
-  playRound();
-  playRound();
+  // playRound();
+  // playRound();
+  // playRound();
+  // playRound();
+  // playRound();
 
-  // End of the playRound call
+  let menuButtons = document.querySelector("#menu-container");
+  menuButtons.addEventListener("click", (event) => {
+    let target = event.target.closest("button");
 
-  // Winner announce in the console
+    if (!target) return;
+
+    switch (target.id) {
+      case "rock":
+        playRound();
+        console.log("Human selected rock!");
+        break;
+      case "paper":
+        playRound();
+        console.log("Human selected paper!");
+        break;
+      case "scissors":
+        playRound();
+        console.log("Human selected scissors!");
+        break;
+    }
+  });
+
+  //   // End of the playRound call
+
+  //   // Winner announce in the console
 
   if (humanScore > computerScore) {
     console.log(`The human is the winner of the round!`);
@@ -158,17 +180,6 @@ Human win! Scissors beat paper!`
     console.log(`The round is a DRAW!`);
   }
 }
-
-const menuButtons = document.querySelector("#menu-container");
-menuButtons.addEventListener("click", (event) => {
-  let target = event.target;
-
-  switch (target.id) {
-    case "rock":
-      scoreBoard();
-      console.log("");
-  }
-});
 
 // End of winner announce in the browser's console // test commit for rps-ui branch
 
