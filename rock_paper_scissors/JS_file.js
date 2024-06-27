@@ -49,6 +49,7 @@ function playGame() {
         break;
     }
     scoreBoard(target.id, getComputerChoice());
+
     if (humanScore === 5) {
       console.log(`The human is the winner of the round!`);
       humanScore = 0;
