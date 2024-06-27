@@ -19,24 +19,48 @@ function getComputerChoice() {
 // Human choice function
 
 function getHumanChoice() {
-  let humanAnswer = prompt("Please insert your choice!");
-  humanAnswer = humanAnswer.toLowerCase();
-
+  let humanAnswer = choice;
   if (humanAnswer === "rock") {
     return "rock";
   } else if (humanAnswer === "paper") {
     return "paper";
   } else if (humanAnswer === "scissors") {
     return "scissors";
-  } else {
-    alert("Please insert one of the following: rock, paper, scissors");
-    prompt("Please insert your choice!");
   }
 }
 
 // End of human choice function
 
+// playGame function
+
 function playGame() {
+  // Menu buttons listener for click
+
+  let menuButtons = document.querySelector("#menu-container");
+  menuButtons.addEventListener("click", (event) => {
+    let target = event.target.closest("button");
+
+    if (!target) return;
+
+    let rockHumanChoice = "Human selected rock!";
+    let paperHumanChoice = "Human selected paper!";
+    let scissorsHumanChoice = "Human selected scissors";
+
+    switch (target.id) {
+      case "rock":
+        console.log(rockHumanChoice);
+        break;
+      case "paper":
+        console.log(paperHumanChoice);
+        break;
+      case "scissors":
+        console.log(scissorsHumanChoice);
+        break;
+    }
+  });
+
+  // End of Menu buttons listener for click
+
   // Score storing variables
 
   let computerScore = 0;
@@ -148,42 +172,23 @@ Human win! Scissors beat paper!`
 
   // End of the playRound call
 
-  // Menu buttons listener for click
-  let menuButtons = document.querySelector("#menu-container");
-  menuButtons.addEventListener("click", (event) => {
-    let target = event.target.closest("button");
+  // Loop to play until human or computer reaches to a score of 5;
+  do {
+    playRound();
+  } while (humanScore < 5 && computerScore < 5);
 
-    if (!target) return;
-
-    switch (target.id) {
-      case "rock":
-        playRound();
-        console.log("Human selected rock!");
-        break;
-      case "paper":
-        playRound();
-        console.log("Human selected paper!");
-        break;
-      case "scissors":
-        playRound();
-        console.log("Human selected scissors!");
-        break;
-    }
-  });
-
-  // End of Menu buttons listener for click
+  // End of the loop to play til 5;
 
   // Winner announce in the console
 
-  if (humanScore > computerScore) {
+  if (humanScore === 5) {
     console.log(`The human is the winner of the round!`);
-  } else if (computerScore > humanScore) {
-    console.log(`The computer is the winner of the round!`);
-  } else if (humanScore === computerScore) {
-    console.log(`The round is a DRAW!`);
-  }
+  } else if (computerScore === 5);
+  console.log(`The computer is the winner of the round!`);
+
+  // End of winner announce in the browser's console // test commit for rps-ui branch
 }
 
-// End of winner announce in the browser's console // test commit for rps-ui branch
+// End of playGame function
 
 playGame();
