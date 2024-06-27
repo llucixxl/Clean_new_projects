@@ -16,24 +16,16 @@ function getComputerChoice() {
 
 // End of computer choice function
 
-// Human choice function
-
-function getHumanChoice() {
-  let humanAnswer = choice;
-  if (humanAnswer === "rock") {
-    return "rock";
-  } else if (humanAnswer === "paper") {
-    return "paper";
-  } else if (humanAnswer === "scissors") {
-    return "scissors";
-  }
-}
-
-// End of human choice function
-
 // playGame function
 
 function playGame() {
+  // Score storing variables
+
+  let computerScore = 0;
+  let humanScore = 0;
+
+  // End of score storing variables
+
   // Menu buttons listener for click
 
   let menuButtons = document.querySelector("#menu-container");
@@ -42,31 +34,33 @@ function playGame() {
 
     if (!target) return;
 
-    let rockHumanChoice = "Human selected rock!";
-    let paperHumanChoice = "Human selected paper!";
-    let scissorsHumanChoice = "Human selected scissors";
-
     switch (target.id) {
       case "rock":
-        console.log(rockHumanChoice);
+        // console.log(rockHumanChoice);
+        // console.log(getComputerChoice());
         break;
       case "paper":
-        console.log(paperHumanChoice);
+        // console.log(paperHumanChoice);
+        // console.log(getComputerChoice());
         break;
       case "scissors":
-        console.log(scissorsHumanChoice);
+        // console.log(scissorsHumanChoice);
+        // console.log(getComputerChoice());
         break;
+    }
+    scoreBoard(target.id, getComputerChoice());
+    if (humanScore === 5) {
+      console.log(`The human is the winner of the round!`);
+      humanScore = 0;
+      computerScore = 0;
+    } else if (computerScore === 5) {
+      console.log(`The computer is the winner of the round!`);
+      humanScore = 0;
+      computerScore = 0;
     }
   });
 
   // End of Menu buttons listener for click
-
-  // Score storing variables
-
-  let computerScore = 0;
-  let humanScore = 0;
-
-  // End of score storing variables
 
   // Start of scoreBoard function code
 
@@ -150,43 +144,6 @@ Human win! Scissors beat paper!`
   }
 
   // End of scoreBoard function code
-
-  // playRound function to make score increment
-
-  function playRound() {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-    scoreBoard(humanSelection, computerSelection);
-  }
-
-  // End of playRound function
-
-  // Call playRound 5 times in a round
-
-  // playRound();
-  // playRound();
-  // playRound();
-  // playRound();
-  // playRound();
-
-  // End of the playRound call
-
-  // Loop to play until human or computer reaches to a score of 5;
-  do {
-    playRound();
-  } while (humanScore < 5 && computerScore < 5);
-
-  // End of the loop to play til 5;
-
-  // Winner announce in the console
-
-  if (humanScore === 5) {
-    console.log(`The human is the winner of the round!`);
-  } else if (computerScore === 5);
-  console.log(`The computer is the winner of the round!`);
-
-  // End of winner announce in the browser's console // test commit for rps-ui branch
 }
 
 // End of playGame function
