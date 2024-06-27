@@ -25,3 +25,12 @@
 .button-3 {
   color: red;
 }
+.display-results {
+  margin-top: 100px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 100px;
+  background-color: blue;
+}
