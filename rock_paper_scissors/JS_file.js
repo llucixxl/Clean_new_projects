@@ -37,7 +37,7 @@ function playGame() {
 
   let menuButtons = document.querySelector("#menu-container");
   menuButtons.addEventListener("click", (event) => {
-    let target = event.target.closest("button");
+    let target = event.target.closest(".buttons");
 
     if (!target) return;
 
@@ -56,15 +56,15 @@ function playGame() {
       console.log(`The human is the winner of the round!`);
       humanScore = 0;
       computerScore = 0;
-      // humanScoreShow.textContent = `${humanScore}`;
-      // computerScoreShow.textContent = `${computerScore}`;
+      humanScoreShow.textContent = `${humanScore}`;
+      computerScoreShow.textContent = `${computerScore}`;
     } else if (computerScore === 5) {
       winnerOfTheRound.textContent = `The computer is the winner of the round!`;
       console.log(`The computer is the winner of the round!`);
       humanScore = 0;
       computerScore = 0;
-      // humanScoreShow.textContent = `${humanScore}`;
-      // computerScoreShow.textContent = `${computerScore}`;
+      humanScoreShow.textContent = `${humanScore}`;
+      computerScoreShow.textContent = `${computerScore}`;
     }
   });
 
