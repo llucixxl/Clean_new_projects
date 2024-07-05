@@ -45,9 +45,15 @@
   padding: 30px 10px;
   gap: 120px;
 }
+.winner-of-the-round-container {
+  display: flex;
+  justify-content: center;
+}
 div .winner-of-the-round {
   text-align: center;
   margin-top: 80px;
+  text-wrap: wrap;
+  width: 470px;
 }
 .score-both {
   margin-top: 30px;
