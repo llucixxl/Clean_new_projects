@@ -45,8 +45,7 @@
   padding: 30px 10px;
   gap: 120px;
 }
-div .winner-of-the-round p {
-  /* margin: 0 auto; */
+div .winner-of-the-round {
   text-align: center;
   margin-top: 80px;
 }
