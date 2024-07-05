@@ -51,11 +51,20 @@ function playGame() {
     }
     scoreBoard(target.id, getComputerChoice());
 
-    if (humanScore === 5 || computerScore === 5) {
+    if (humanScore === 5) {
       winnerOfTheRound.textContent = `The human is the winner of the round!`;
       console.log(`The human is the winner of the round!`);
       humanScore = 0;
       computerScore = 0;
+      humanScoreShow.textContent = `${humanScore}`;
+      computerScoreShow.textContent = `${computerScore}`;
+    } else if (computerScore === 5) {
+      winnerOfTheRound.textContent = `The computer is the winner of the round!`;
+      console.log(`The computer is the winner of the round!`);
+      humanScore = 0;
+      computerScore = 0;
+      humanScoreShow.textContent = `${humanScore}`;
+      computerScoreShow.textContent = `${computerScore}`;
     }
   });
 
