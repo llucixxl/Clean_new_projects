@@ -19,6 +19,10 @@
 .button-1 {
   color: blue;
 }
+.active,
+.buttons:hover {
+  background-color: rgba(204, 203, 203, 0.774);
+}
 .button-2 {
   color: rgb(1, 99, 1);
 }
