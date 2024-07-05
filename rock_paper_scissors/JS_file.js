@@ -19,8 +19,14 @@ function getComputerChoice() {
 // playGame function
 
 function playGame() {
-  // Score storing variables
+  // Reference to score show variables
 
+  const humanScoreShow = document.querySelector(".human-score-show");
+  const computerScoreShow = document.querySelector(".computer-score-show");
+  const winnerOfTheRound = document.querySelector(".winner-of-the-round");
+  // Reference to score show variables
+
+  // Score storing variables
   let computerScore = 0;
   let humanScore = 0;
 
@@ -82,6 +88,7 @@ Human wins! Paper beats rock!`
       );
       humanScore++;
       console.log(`Human: ` + humanScore);
+      humanScoreShow.textContent = `${humanScore}`;
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
       console.log(
         `User choice: "scissors"
@@ -91,6 +98,7 @@ Computer wins! Rock beat scissors!`
       );
       computerScore++;
       console.log(`Computer: ` + computerScore);
+      computerScoreShow.textContent = `${computerScore}`;
     } else if (humanChoice === "paper" && computerChoice === "paper") {
       console.log(
         `User choice: "paper"
@@ -114,6 +122,7 @@ Computer wins! Paper beats rock!`
       );
       computerScore++;
       console.log(`Computer: ` + computerScore);
+      computerScoreShow.textContent = `${computerScore}`;
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
       console.log(
         `User choice: "rock"
@@ -123,6 +132,7 @@ Human win! Rock beats scissors!`
       );
       humanScore++;
       console.log(`Human: ` + humanScore);
+      humanScoreShow.textContent = `${humanScore}`;
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
       console.log(
         `User choice: "paper"
@@ -132,6 +142,7 @@ Computer wins! Scissors beat paper!`
       );
       computerScore++;
       console.log(`Computer: ` + computerScore);
+      computerScoreShow.textContent = `${computerScore}`;
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
       console.log(
         `User choice: "scissors"
@@ -141,6 +152,7 @@ Human win! Scissors beat paper!`
       );
       humanScore++;
       console.log(`Human: ` + humanScore);
+      humanScoreShow.textContent = `${humanScore}`;
     }
   }
 
