@@ -56,15 +56,15 @@ function playGame() {
       console.log(`The human is the winner of the round!`);
       humanScore = 0;
       computerScore = 0;
-      humanScoreShow.textContent = `${humanScore}`;
-      computerScoreShow.textContent = `${computerScore}`;
+      // humanScoreShow.textContent = `${humanScore}`;
+      // computerScoreShow.textContent = `${computerScore}`;
     } else if (computerScore === 5) {
       winnerOfTheRound.textContent = `The computer is the winner of the round!`;
       console.log(`The computer is the winner of the round!`);
       humanScore = 0;
       computerScore = 0;
-      humanScoreShow.textContent = `${humanScore}`;
-      computerScoreShow.textContent = `${computerScore}`;
+      // humanScoreShow.textContent = `${humanScore}`;
+      // computerScoreShow.textContent = `${computerScore}`;
     }
   });
 
@@ -141,7 +141,7 @@ Computer wins! Paper beats rock!`;
 User choice: "rock"
 Computer choice: "scissors"
 
-Human win! Rock beats scissors!`;
+Human wins! Rock beats scissors!`;
       console.log(humanWins);
       humanScore++;
       console.log(`Human: ` + humanScore);
@@ -163,7 +163,7 @@ Computer wins! Scissors beat paper!`;
 User choice: "scissors"
 Computer choice: "paper"
 
-Human win! Scissors beat paper!`;
+Human wins! Scissors beat paper!`;
       console.log(humanWins);
       humanScore++;
       console.log(`Human: ` + humanScore);
