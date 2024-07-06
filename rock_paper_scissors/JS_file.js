@@ -15,7 +15,8 @@ function getComputerChoice() {
 }
 
 // End of computer choice function
-
+let computerScore = 0;
+let humanScore = 0;
 // playGame function
 
 function playGame() {
@@ -28,8 +29,8 @@ function playGame() {
   // Reference to score show variables
 
   // Score storing variables
-  let computerScore = 0;
-  let humanScore = 0;
+  // let computerScore = 0;
+  // let humanScore = 0;
 
   // End of score storing variables
 
@@ -51,21 +52,21 @@ function playGame() {
     }
     scoreBoard(target.id, getComputerChoice());
 
-    if (humanScore === 5) {
-      winnerOfTheRound.textContent = `The human is the winner of the round!`;
-      console.log(`The human is the winner of the round!`);
-      humanScore = 0;
-      computerScore = 0;
-      humanScoreShow.textContent = `${humanScore}`;
-      computerScoreShow.textContent = `${computerScore}`;
-    } else if (computerScore === 5) {
-      winnerOfTheRound.textContent = `The computer is the winner of the round!`;
-      console.log(`The computer is the winner of the round!`);
-      humanScore = 0;
-      computerScore = 0;
-      humanScoreShow.textContent = `${humanScore}`;
-      computerScoreShow.textContent = `${computerScore}`;
-    }
+    // if (humanScore === 5) {
+    //   winnerOfTheRound.textContent = `The human is the winner of the round!`;
+    //   console.log(`The human is the winner of the round!`);
+    //   // humanScore = 0;
+    //   // computerScore = 0;
+    //   // humanScoreShow.textContent = `${humanScore}`;
+    //   // computerScoreShow.textContent = `${computerScore}`;
+    // } else if (computerScore === 5) {
+    //   winnerOfTheRound.textContent = `The computer is the winner of the round!`;
+    //   console.log(`The computer is the winner of the round!`);
+    //   // humanScore = 0;
+    //   // computerScore = 0;
+    //   // humanScoreShow.textContent = `${humanScore}`;
+    //   // computerScoreShow.textContent = `${computerScore}`;
+    // }
   });
 
   // End of Menu buttons listener for click
@@ -169,6 +170,21 @@ Human wins! Scissors beat paper!`;
       console.log(`Human: ` + humanScore);
       humanScoreShow.textContent = `${humanScore}`;
       winnerOfTheRound.textContent = `${humanWins}`;
+    }
+    if (humanScore === 5) {
+      winnerOfTheRound.textContent = `The human is the winner of the round!`;
+      console.log(`The human is the winner of the round!`);
+      humanScore = 0;
+      computerScore = 0;
+      humanScoreShow.textContent = `${humanScore}`;
+      computerScoreShow.textContent = `${computerScore}`;
+    } else if (computerScore === 5) {
+      winnerOfTheRound.textContent = `The computer is the winner of the round!`;
+      console.log(`The computer is the winner of the round!`);
+      humanScore = 0;
+      computerScore = 0;
+      humanScoreShow.textContent = `${humanScore}`;
+      computerScoreShow.textContent = `${computerScore}`;
     }
   }
   // End of scoreBoard function code
