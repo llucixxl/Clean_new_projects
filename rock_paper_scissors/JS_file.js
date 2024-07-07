@@ -1,5 +1,4 @@
 // JS initial commit
-
 // Computer choice function
 
 function getComputerChoice() {
@@ -17,6 +16,7 @@ function getComputerChoice() {
 // End of computer choice function
 let computerScore = 0;
 let humanScore = 0;
+// let gameOver = false;
 // playGame function
 
 function playGame() {
@@ -41,6 +41,21 @@ function playGame() {
     let target = event.target.closest(".buttons");
 
     if (!target) return;
+
+    if (humanScore === 5 || computerScore === 5) {
+      humanScore = 0;
+      computerScore = 0;
+      humanScoreShow.textContent = `${humanScore}`;
+      computerScoreShow.textContent = `${computerScore}`;
+    }
+    //  if (gameOver) {
+    //   // Reset scores if the game is over
+    //   computerScore = 0;
+    //   humanScore = 0;
+    //   humanScoreShow.textContent = `${humanScore}`;
+    //   computerScoreShow.textContent = `${computerScore}`;
+    //   gameOver = false; // Reset the game over flag
+    // }
 
     switch (target.id) {
       case "rock":
@@ -92,7 +107,7 @@ Computer choice: "rock"
       
 Human wins! Paper beats rock!`;
       console.log(humanWins);
-      humanScore++;
+      ++humanScore;
       console.log(`Human: ` + humanScore);
       humanScoreShow.textContent = `${humanScore}`;
       winnerOfTheRound.textContent = `${humanWins}`;
@@ -103,7 +118,7 @@ Computer choice: "rock"
 
 Computer wins! Rock beat scissors!`;
       console.log(computerWins);
-      computerScore++;
+      ++computerScore;
       console.log(`Computer: ` + computerScore);
       computerScoreShow.textContent = `${computerScore}`;
       winnerOfTheRound.textContent = `${computerWins}`;
@@ -133,7 +148,7 @@ Computer choice: "paper"
 
 Computer wins! Paper beats rock!`;
       console.log(computerWins);
-      computerScore++;
+      ++computerScore;
       console.log(`Computer: ` + computerScore);
       computerScoreShow.textContent = `${computerScore}`;
       winnerOfTheRound.textContent = `${computerWins}`;
@@ -144,7 +159,7 @@ Computer choice: "scissors"
 
 Human wins! Rock beats scissors!`;
       console.log(humanWins);
-      humanScore++;
+      ++humanScore;
       console.log(`Human: ` + humanScore);
       humanScoreShow.textContent = `${humanScore}`;
       winnerOfTheRound.textContent = `${humanWins}`;
@@ -155,7 +170,7 @@ Computer choice: "scissors"
 
 Computer wins! Scissors beat paper!`;
       console.log(computerWins);
-      computerScore++;
+      ++computerScore;
       console.log(`Computer: ` + computerScore);
       computerScoreShow.textContent = `${computerScore}`;
       winnerOfTheRound.textContent = `${computerWins}`;
@@ -166,7 +181,7 @@ Computer choice: "paper"
 
 Human wins! Scissors beat paper!`;
       console.log(humanWins);
-      humanScore++;
+      ++humanScore;
       console.log(`Human: ` + humanScore);
       humanScoreShow.textContent = `${humanScore}`;
       winnerOfTheRound.textContent = `${humanWins}`;
@@ -174,18 +189,16 @@ Human wins! Scissors beat paper!`;
     if (humanScore === 5) {
       winnerOfTheRound.textContent = `The human is the winner of the round!`;
       console.log(`The human is the winner of the round!`);
-      humanScore = 0;
-      computerScore = 0;
-      humanScoreShow.textContent = `${humanScore}`;
-      computerScoreShow.textContent = `${computerScore}`;
+
+      // gameOver = true;
     } else if (computerScore === 5) {
       winnerOfTheRound.textContent = `The computer is the winner of the round!`;
       console.log(`The computer is the winner of the round!`);
-      humanScore = 0;
-      computerScore = 0;
-      humanScoreShow.textContent = `${humanScore}`;
-      computerScoreShow.textContent = `${computerScore}`;
+
+      // gameOver = true;
     }
+    //     humanScoreShow.textContent = `${humanScore}`;
+    // computerScoreShow.textContent = `${computerScore}`;
   }
   // End of scoreBoard function code
 }
